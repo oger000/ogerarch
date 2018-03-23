@@ -5,7 +5,7 @@ UI Language: DE
 
 ## System Requirement
 Webserver, PHP, MySql (or MariaDB)   
-For windows workstations XAMPP (https://www.apachefriends.org/) has shown good results.
+For windows workstations XAMPP <https://www.apachefriends.org/> has shown good results.
 
 ## Install
 Copy all files to the location as needed for your web server. For non-development usage only the `web/`directory is needed.  
@@ -24,10 +24,12 @@ The programm checks the database structure during every logon and tries to corre
 ## Update
 Make a Backup! For update move the current program files out of the way to a backup directory to avoid problems with zombie files. Afterwards follow the instructions in `Install` and move the local config file and the autobackup files to the new install.
 
-For windows there exists the dos-batch file ``, that should handle all for you.
+For windows there exists the dos-batch file `dev-info/ogerarch-update-windows.bat`, that should handle all for you. Having a backup is up to you.
 
 ## Usage
+- Create "Stammdaten -> Firma" to be included into pdf-output.
+- You can predefine other masterdata too, but everything works fine without. In most cases arbitrary input is possible and the existing input values are provided for selection.
+- Be happy &#9786;
 
 ## Development
-Clone the source from github. Initiating the submodules is a mess in git, but the script `dev-info/git-submodule-firstrun.sh` should do the job for you.
-
+See `dev-info/README-DEV.md`.
