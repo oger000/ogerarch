@@ -4,7 +4,8 @@ UI Language: DE
 
 
 ## System Requirement
-Webserver, PHP, MySql
+Webserver, PHP, MySql (or MariaDB)   
+For windows workstations XAMPP (https://www.apachefriends.org/) has shown good results.
 
 ## Install
 Copy all files to the location as needed for your web server. For non-development usage only the `web/`directory is needed.  
