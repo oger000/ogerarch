@@ -1,0 +1,912 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-05 17:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: changePassword.js:23 excavMainWindow.js:1214 excavMainWindow.js:1221
+#: mainWindow.js:155 mainWindow.js:170 mainWindow.js:191 mainWindow.js:206
+#: userAdmin.js:23
+msgid "Antwort"
+msgstr ""
+
+#: changePassword.js:23 excavMainWindow.js:1214 excavMainWindow.js:1221
+#: mainWindow.js:155 mainWindow.js:170 mainWindow.js:191 mainWindow.js:206
+#: userAdmin.js:23
+msgid "Antwortx"
+msgstr "answer"
+
+#: changePassword.js:39
+msgid "Passwort ändern"
+msgstr ""
+
+#: changePassword.js:39
+msgid "Passwort ändernix"
+msgstr "hohoPasswort ändern"
+
+#: changePassword.js:55 changePassword.js:64
+msgid "Altes Passwort"
+msgstr ""
+
+#: changePassword.js:56 changePassword.js:65
+msgid "Neues Passwort"
+msgstr ""
+
+#: changePassword.js:57 changePassword.js:66 userAdmin.js:103
+msgid "Passwort bestätigen"
+msgstr ""
+
+#: changePassword.js:67
+msgid "test checkbox"
+msgstr ""
+
+#: changePassword.js:85 mainWindow.js:284 mainWindow.js:322 userAdmin.js:120
+msgid "Ok"
+msgstr ""
+
+#: changePassword.js:92 changePassword.js:97 userAdmin.js:127
+msgid "Ergebnis"
+msgstr ""
+
+#: changePassword.js:92
+msgid "Passwortänderung wurde durchgeführt."
+msgstr ""
+
+#: changePassword.js:97
+msgid "Passwortänderung ist gescheitert."
+msgstr ""
+
+#: changePassword.js:109 userAdmin.js:146
+msgid "Abbrechen"
+msgstr ""
+
+#: excavMainWindow.js:100 excavMainWindow.js:186 excavMainWindow.js:1508
+msgid "Grabung"
+msgstr ""
+
+#: excavMainWindow.js:101 excavMainWindow.js:187
+msgid "Amtliche ID"
+msgstr ""
+
+#: excavMainWindow.js:102 excavMainWindow.js:188 userAdmin.js:74
+#: userAdmin.js:99
+msgid "Beginn"
+msgstr ""
+
+#: excavMainWindow.js:103 excavMainWindow.js:189 userAdmin.js:75
+#: userAdmin.js:100
+msgid "Ende"
+msgstr ""
+
+#: excavMainWindow.js:104 excavMainWindow.js:190
+msgid "Methode"
+msgstr ""
+
+#: excavMainWindow.js:108 excavMainWindow.js:113
+msgid "Neue Grabung"
+msgstr ""
+
+#: excavMainWindow.js:124 excavMainWindow.js:391 excavMainWindow.js:884
+#: excavMainWindow.js:1205
+msgid "Löschen"
+msgstr ""
+
+#: excavMainWindow.js:128 excavMainWindow.js:397 excavMainWindow.js:1233
+msgid "Reload"
+msgstr ""
+
+#: excavMainWindow.js:178 excavMainWindow.js:456 excavMainWindow.js:944
+msgid "Allgemein"
+msgstr ""
+
+#: excavMainWindow.js:196 excavMainWindow.js:496 excavMainWindow.js:1353
+msgid "Datierung"
+msgstr ""
+
+#: excavMainWindow.js:198 excavMainWindow.js:498 excavMainWindow.js:1355
+msgid "von"
+msgstr ""
+
+#: excavMainWindow.js:199 excavMainWindow.js:499 excavMainWindow.js:1356
+msgid "bis"
+msgstr ""
+
+#: excavMainWindow.js:200 excavMainWindow.js:500 excavMainWindow.js:1357
+msgid "Wahrscheinlichk"
+msgstr ""
+
+#: excavMainWindow.js:206
+msgid "Lage"
+msgstr ""
+
+#: excavMainWindow.js:214
+msgid "Land"
+msgstr ""
+
+#: excavMainWindow.js:215
+msgid "Bundesland"
+msgstr ""
+
+#: excavMainWindow.js:216
+msgid "Bezirk"
+msgstr ""
+
+#: excavMainWindow.js:217
+msgid "Gemeinde"
+msgstr ""
+
+#: excavMainWindow.js:218
+msgid "Katastralgemeinde"
+msgstr ""
+
+#: excavMainWindow.js:219 excavMainWindow.js:952
+msgid "Parzelle"
+msgstr ""
+
+#: excavMainWindow.js:220
+msgid "Ost (WGS84)"
+msgstr ""
+
+#: excavMainWindow.js:221
+msgid "Nord (WGS84)"
+msgstr ""
+
+#: excavMainWindow.js:222
+msgid "Seehöhe"
+msgstr ""
+
+#: excavMainWindow.js:226 excavMainWindow.js:996 excavMainWindow.js:998
+msgid "Beschreibung"
+msgstr ""
+
+#: excavMainWindow.js:232 excavMainWindow.js:233 excavMainWindow.js:1360
+msgid "Anmerkungen"
+msgstr ""
+
+#: excavMainWindow.js:244 excavMainWindow.js:675 excavMainWindow.js:1056
+#: excavMainWindow.js:1401 stratumTypeWindow.js:118 stratumTypeWindow.js:258
+msgid "Speichern"
+msgstr ""
+
+#: excavMainWindow.js:339
+msgid "Sofortdruck"
+msgstr ""
+
+#: excavMainWindow.js:342
+msgid "Bitte zuerst Fund auswählen."
+msgstr ""
+
+#: excavMainWindow.js:342
+msgid "Warnung"
+msgstr ""
+
+#: excavMainWindow.js:369 excavMainWindow.js:890
+msgid "Nummer"
+msgstr ""
+
+#: excavMainWindow.js:370 excavMainWindow.js:463 excavMainWindow.js:891
+#: excavMainWindow.js:951 excavMainWindow.js:1151 excavMainWindow.js:1332
+msgid "Datum"
+msgstr ""
+
+#: excavMainWindow.js:371 excavMainWindow.js:1155 excavMainWindow.js:1338
+#: excavMainWindow.js:1549
+msgid "Stratum"
+msgstr ""
+
+#: excavMainWindow.js:372 excavMainWindow.js:518
+msgid "Sonderfund"
+msgstr ""
+
+#: excavMainWindow.js:376
+msgid "Neuer Fund"
+msgstr ""
+
+#: excavMainWindow.js:445
+msgid "Fundnummer"
+msgstr ""
+
+#: excavMainWindow.js:446
+msgid "Signatur"
+msgstr ""
+
+#: excavMainWindow.js:464 excavMainWindow.js:1156 excavMainWindow.js:1343
+msgid "Schnitt"
+msgstr ""
+
+#: excavMainWindow.js:465
+msgid "Bereich"
+msgstr ""
+
+#: excavMainWindow.js:466
+msgid "Abbauschicht"
+msgstr ""
+
+#: excavMainWindow.js:467
+msgid "Bei Arbeitsschritt"
+msgstr ""
+
+#: excavMainWindow.js:476
+msgid "Anmerkung Lage"
+msgstr ""
+
+#: excavMainWindow.js:477 excavMainWindow.js:961 excavMainWindow.js:1460
+msgid "Plan"
+msgstr ""
+
+#: excavMainWindow.js:478
+msgid "Interface"
+msgstr ""
+
+#: excavMainWindow.js:479
+msgid "Interface-Art"
+msgstr ""
+
+#: excavMainWindow.js:481 excavMainWindow.js:972
+msgid "Liste"
+msgstr ""
+
+#: excavMainWindow.js:492 excavMainWindow.js:981
+msgid "Sonst"
+msgstr ""
+
+#: excavMainWindow.js:495 excavMainWindow.js:1163 excavMainWindow.js:1350
+msgid "Komplex"
+msgstr ""
+
+#: excavMainWindow.js:503
+msgid "Bemerkungen"
+msgstr ""
+
+#: excavMainWindow.js:505
+msgid "Allgem.Bemerk"
+msgstr ""
+
+#: excavMainWindow.js:510
+msgid "Details"
+msgstr ""
+
+#: excavMainWindow.js:632
+msgid "Organisches"
+msgstr ""
+
+#: excavMainWindow.js:633
+msgid "Fundanmerkung"
+msgstr ""
+
+#: excavMainWindow.js:634
+msgid "Mengenanmerkung"
+msgstr ""
+
+#: excavMainWindow.js:640
+msgid "Proben"
+msgstr ""
+
+#: excavMainWindow.js:647
+msgid "Sedimentprobe"
+msgstr ""
+
+#: excavMainWindow.js:648
+msgid "Schlämmprobe"
+msgstr ""
+
+#: excavMainWindow.js:649
+msgid "Holzkohleprobe"
+msgstr ""
+
+#: excavMainWindow.js:650
+msgid "Mörtelprobe"
+msgstr ""
+
+#: excavMainWindow.js:651
+msgid "Schlackeprobe"
+msgstr ""
+
+#: excavMainWindow.js:652
+msgid "Probenanmerk."
+msgstr ""
+
+#: excavMainWindow.js:657 excavMainWindow.js:1345
+msgid "Planum/DOKN"
+msgstr ""
+
+#: excavMainWindow.js:663
+msgid "Verbleib"
+msgstr ""
+
+#: excavMainWindow.js:695
+msgid "Datensatz wurde erfolgreich gespeichert. Weiteren Fund erfassen?"
+msgstr ""
+
+#: excavMainWindow.js:695 excavMainWindow.js:785 excavMainWindow.js:1072
+msgid "Weiter"
+msgstr ""
+
+#: excavMainWindow.js:764 excavMainWindow.js:892 excavMainWindow.js:933
+msgid "Kategorie"
+msgstr ""
+
+#: excavMainWindow.js:775 excavMainWindow.js:879
+msgid "Neues Stratum"
+msgstr ""
+
+#: excavMainWindow.js:797 mainWindow.js:367
+msgid "Schliessen"
+msgstr ""
+
+#: excavMainWindow.js:811
+msgid "Bitte zuerst die Kategorie für neues Stratum auswählen."
+msgstr ""
+
+#: excavMainWindow.js:811
+msgid "Fehlende Angabe"
+msgstr ""
+
+#: excavMainWindow.js:817
+msgid "Eingabe für Komplex noch nicht verfügbar."
+msgstr ""
+
+#: excavMainWindow.js:817 excavMainWindow.js:821 excavMainWindow.js:825
+#: excavMainWindow.js:828 excavMainWindow.js:832 excavMainWindow.js:836
+#: excavMainWindow.js:1201 stratumTypeWindow.js:351
+msgid "Hinweis"
+msgstr ""
+
+#: excavMainWindow.js:821
+msgid "Eingabe für Interface noch nicht verfügbar."
+msgstr ""
+
+#: excavMainWindow.js:825
+msgid "Eingabe für Schicht noch nicht verfügbar."
+msgstr ""
+
+#: excavMainWindow.js:828
+msgid "Eingabe für Skelett noch nicht verfügbar."
+msgstr ""
+
+#: excavMainWindow.js:832
+msgid "Eingabe für Mauer noch nicht verfügbar."
+msgstr ""
+
+#: excavMainWindow.js:836
+msgid "Eingabe für Holz noch nicht verfügbar."
+msgstr ""
+
+#: excavMainWindow.js:840
+msgid "Falsche Kategorie "
+msgstr ""
+
+#: excavMainWindow.js:840 mainWindow.js:388
+msgid "Fehler"
+msgstr ""
+
+#: excavMainWindow.js:893
+msgid "Typ"
+msgstr ""
+
+#: excavMainWindow.js:934
+msgid "Stratum-Nummer"
+msgstr ""
+
+#: excavMainWindow.js:953
+msgid "BearbeiterIn"
+msgstr ""
+
+#: excavMainWindow.js:954
+msgid "Fotos"
+msgstr ""
+
+#: excavMainWindow.js:970
+msgid "Befundart"
+msgstr ""
+
+#: excavMainWindow.js:984
+msgid "Länge"
+msgstr ""
+
+#: excavMainWindow.js:985
+msgid "Breite"
+msgstr ""
+
+#: excavMainWindow.js:986
+msgid "Durchmesser"
+msgstr ""
+
+#: excavMainWindow.js:987
+msgid "Tiefe"
+msgstr ""
+
+#: excavMainWindow.js:988
+msgid "Höhe über NormalNull"
+msgstr ""
+
+#: excavMainWindow.js:990
+msgid "Höchster Wert"
+msgstr ""
+
+#: excavMainWindow.js:991
+msgid "Tiefster Wert"
+msgstr ""
+
+#: excavMainWindow.js:994
+msgid "Interpretation"
+msgstr ""
+
+#: excavMainWindow.js:995
+msgid "Grobdatierung"
+msgstr ""
+
+#: excavMainWindow.js:1003
+msgid "Detail"
+msgstr ""
+
+#: excavMainWindow.js:1011
+msgid "Farbe"
+msgstr ""
+
+#: excavMainWindow.js:1012
+msgid "Härte"
+msgstr ""
+
+#: excavMainWindow.js:1013
+msgid "Konsistenz"
+msgstr ""
+
+#: excavMainWindow.js:1014
+msgid "Einschlüsse"
+msgstr ""
+
+#: excavMainWindow.js:1015
+msgid "Ausrichtung"
+msgstr ""
+
+#: excavMainWindow.js:1016
+msgid "Gefälle"
+msgstr ""
+
+#: excavMainWindow.js:1017
+msgid "Funde vorhanden"
+msgstr ""
+
+#: excavMainWindow.js:1018
+msgid "Proben vorhenden"
+msgstr ""
+
+#: excavMainWindow.js:1023
+msgid "Matrix"
+msgstr ""
+
+#: excavMainWindow.js:1030
+msgid "Älter als (unter)"
+msgstr ""
+
+#: excavMainWindow.js:1031
+msgid "Ist ident mit"
+msgstr ""
+
+#: excavMainWindow.js:1032
+msgid "Zeitgleich mit"
+msgstr ""
+
+#: excavMainWindow.js:1038
+msgid "Funde"
+msgstr ""
+
+#: excavMainWindow.js:1072
+msgid "Datensatz wurde erfolgreich gespeichert. Weiteres Stratum erfassen?"
+msgstr ""
+
+#: excavMainWindow.js:1087
+msgid "<BR>Hinweis: Zugeordnete Schicht ist noch nicht angelegt."
+msgstr ""
+
+#: excavMainWindow.js:1150 excavMainWindow.js:1300
+msgid "Dateiname"
+msgstr ""
+
+#: excavMainWindow.js:1152 excavMainWindow.js:1333
+msgid "Titel"
+msgstr ""
+
+#: excavMainWindow.js:1153
+msgid "Üs"
+msgstr ""
+
+#: excavMainWindow.js:1154
+msgid "Relev"
+msgstr ""
+
+#: excavMainWindow.js:1157 excavMainWindow.js:1344
+msgid "Sektor"
+msgstr ""
+
+#: excavMainWindow.js:1158
+msgid "Planum"
+msgstr ""
+
+#: excavMainWindow.js:1159 excavMainWindow.js:1346
+msgid "Profil"
+msgstr ""
+
+#: excavMainWindow.js:1160 excavMainWindow.js:1347
+msgid "Objekt"
+msgstr ""
+
+#: excavMainWindow.js:1161 excavMainWindow.js:1348
+msgid "Grab"
+msgstr ""
+
+#: excavMainWindow.js:1162 excavMainWindow.js:1349
+msgid "Mauer"
+msgstr ""
+
+#: excavMainWindow.js:1167
+msgid "Neues Foto"
+msgstr ""
+
+#: excavMainWindow.js:1194
+msgid "Datei löschen"
+msgstr ""
+
+#: excavMainWindow.js:1201
+msgid "Bitte zuerst Datei auswählen."
+msgstr ""
+
+#: excavMainWindow.js:1205
+msgid "Datei "
+msgstr ""
+
+#: excavMainWindow.js:1214
+msgid "Datei erfolgreich gelöscht."
+msgstr ""
+
+#: excavMainWindow.js:1305 mainWindow.js:372
+msgid "Herunterladen"
+msgstr ""
+
+#: excavMainWindow.js:1315
+msgid "Neue Datei"
+msgstr ""
+
+#: excavMainWindow.js:1325
+msgid "Angaben"
+msgstr ""
+
+#: excavMainWindow.js:1334
+msgid "Ist Übersicht"
+msgstr ""
+
+#: excavMainWindow.js:1335
+msgid "Relevanz (-1..100)"
+msgstr ""
+
+#: excavMainWindow.js:1336
+msgid "Schichtgrabung"
+msgstr ""
+
+#: excavMainWindow.js:1341
+msgid "Planumsgrabung"
+msgstr ""
+
+#: excavMainWindow.js:1366
+msgid "Vorschau"
+msgstr ""
+
+#: excavMainWindow.js:1438 excavMainWindow.js:1571
+msgid "Datei"
+msgstr ""
+
+#: excavMainWindow.js:1442
+msgid "Foto"
+msgstr ""
+
+#: excavMainWindow.js:1464
+msgid "Messdaten"
+msgstr ""
+
+#: excavMainWindow.js:1497
+msgid "Grabungsliste"
+msgstr ""
+
+#: excavMainWindow.js:1527
+msgid "Fund"
+msgstr ""
+
+#: logon.js:25
+msgid "Anmeldung Sozialarbeits Dokumentation"
+msgstr ""
+
+#: logon.js:57
+msgid "Logon User"
+msgstr ""
+
+#: logon.js:58
+msgid "User Passwort"
+msgstr ""
+
+#: logon.js:60
+msgid "automatische Anmeldung"
+msgstr ""
+
+#: logon.js:73
+msgid "Auswahlliste"
+msgstr ""
+
+#: logon.js:77
+msgid "Treiber"
+msgstr ""
+
+#: logon.js:82
+msgid "Keine Angabe"
+msgstr ""
+
+#: logon.js:92 logon.js:93
+msgid "Datenbank Name"
+msgstr ""
+
+#: logon.js:95
+msgid "Datenbank User"
+msgstr ""
+
+#: logon.js:96
+msgid "Datenbank Password"
+msgstr ""
+
+#: logon.js:97
+msgid "Attribute"
+msgstr ""
+
+#: logon.js:106
+msgid "Anmelden"
+msgstr ""
+
+#: mainWindow.js:26 mainWindow.js:123
+msgid "Menü"
+msgstr ""
+
+#: mainWindow.js:29
+msgid "Erfassung"
+msgstr ""
+
+#: mainWindow.js:31
+msgid "Grabungsdaten"
+msgstr ""
+
+#: mainWindow.js:32
+msgid "#Konsistenzprüfung"
+msgstr ""
+
+#: mainWindow.js:36
+msgid "Auswertungen"
+msgstr ""
+
+#: mainWindow.js:38
+msgid "#BDA Vorbericht"
+msgstr ""
+
+#: mainWindow.js:39
+msgid "#BDA Endbericht"
+msgstr ""
+
+#: mainWindow.js:40
+msgid "#Statistik"
+msgstr ""
+
+#: mainWindow.js:41
+msgid "#Sonstwas"
+msgstr ""
+
+#: mainWindow.js:45
+msgid "Stammdaten"
+msgstr ""
+
+#: mainWindow.js:47
+msgid "Verwaltungseinheit"
+msgstr ""
+
+#: mainWindow.js:49
+msgid "#Bezirk"
+msgstr ""
+
+#: mainWindow.js:50
+msgid "#Gemeinde"
+msgstr ""
+
+#: mainWindow.js:53
+msgid "Stratum Kategorie/Art"
+msgstr ""
+
+#: mainWindow.js:54
+msgid "#Firma"
+msgstr ""
+
+#: mainWindow.js:58
+msgid "Import/Export"
+msgstr ""
+
+#: mainWindow.js:60
+msgid "Import"
+msgstr ""
+
+#: mainWindow.js:62
+msgid "#Grabung (sql)"
+msgstr ""
+
+#: mainWindow.js:63
+msgid "#Von alten Datenbanken (csv)"
+msgstr ""
+
+#: mainWindow.js:66 mainWindow.js:374
+msgid "Export"
+msgstr ""
+
+#: mainWindow.js:68
+msgid "#SQL"
+msgstr ""
+
+#: mainWindow.js:69
+msgid "#XML"
+msgstr ""
+
+#: mainWindow.js:70
+msgid "#CSV-Text"
+msgstr ""
+
+#: mainWindow.js:76
+msgid "System"
+msgstr ""
+
+#: mainWindow.js:78
+msgid "#Userverwaltung"
+msgstr ""
+
+#: mainWindow.js:79
+msgid "#Passwort ändern"
+msgstr ""
+
+#: mainWindow.js:80 mainWindow.js:306
+msgid "Remote Fehlerprotokoll"
+msgstr ""
+
+#: mainWindow.js:84
+msgid "Über"
+msgstr ""
+
+#: mainWindow.js:85
+msgid "Abmelden"
+msgstr ""
+
+#: mainWindow.js:108
+msgid "User: "
+msgstr ""
+
+#: mainWindow.js:114
+msgid "Anmeldedatum: "
+msgstr ""
+
+#: mainWindow.js:213
+msgid "Anwendung schliessen?"
+msgstr ""
+
+#: mainWindow.js:213
+msgid "Programmende"
+msgstr ""
+
+#: mainWindow.js:275
+msgid "Über Archäologie-Dokumentation"
+msgstr ""
+
+#: mainWindow.js:341
+msgid ""
+"Wenn Sie direkten Zugriff auf den Server haben, dann Könne Sie die Datei "
+"unter dem angegebenen Dateinamen find. "
+msgstr ""
+
+#: mainWindow.js:346
+msgid "Export Protokoll"
+msgstr ""
+
+#: mainWindow.js:385
+msgid "Erfolg"
+msgstr ""
+
+#: stratumTypeWindow.js:61 stratumTypeWindow.js:64
+msgid "Neue Stratum Kategorie"
+msgstr ""
+
+#: stratumTypeWindow.js:91 stratumTypeWindow.js:111 stratumTypeWindow.js:228
+msgid "Id"
+msgstr ""
+
+#: stratumTypeWindow.js:92 stratumTypeWindow.js:112 stratumTypeWindow.js:229
+#: stratumTypeWindow.js:251
+msgid "Bezeichnung"
+msgstr ""
+
+#: stratumTypeWindow.js:200
+msgid "Neuer Stratum Typ/Art"
+msgstr ""
+
+#: stratumTypeWindow.js:230 stratumTypeWindow.js:252
+msgid "Code"
+msgstr ""
+
+#: stratumTypeWindow.js:308
+msgid "Stratum Kategorien und Typen"
+msgstr ""
+
+#: stratumTypeWindow.js:316
+msgid "Kategorien"
+msgstr ""
+
+#: stratumTypeWindow.js:329
+msgid "Typ/Art"
+msgstr ""
+
+#: stratumTypeWindow.js:351
+msgid "Bitte zuerst Kategorie auswählen."
+msgstr ""
+
+#: test.js:1
+msgid "bla"
+msgstr ""
+
+#: test.js:2
+msgid "fasel"
+msgstr ""
+
+#: userAdmin.js:62
+msgid "Neuanlage"
+msgstr ""
+
+#: userAdmin.js:72 userAdmin.js:97
+msgid "Logon"
+msgstr ""
+
+#: userAdmin.js:73 userAdmin.js:98
+msgid "Person"
+msgstr ""
+
+#: userAdmin.js:96
+msgid "ID"
+msgstr ""
+
+#: userAdmin.js:101
+msgid "PAM Authentifizierung"
+msgstr ""
+
+#: userAdmin.js:102
+msgid "Passwort"
+msgstr ""
+
+#: userAdmin.js:104
+msgid "Anmeldung erlaubt"
+msgstr ""
+
+#: userAdmin.js:105
+msgid "Admin-Rechte"
+msgstr ""
+
+#: userAdmin.js:106
+msgid "Stammdaten-Rechte"
+msgstr ""
+
+#: userAdmin.js:111
+msgid "User Details"
+msgstr ""
+
+#: userAdmin.js:127
+msgid "Datensatz wurde erfolgreich gespeichert."
+msgstr ""

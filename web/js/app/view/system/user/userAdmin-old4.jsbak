@@ -1,0 +1,186 @@
+/*
+#LICENSE BEGIN
+**********************************************************************
+* OgerArch - Archaeological Database is released under the GNU General Public License (GPL) <http://www.gnu.org/licenses>
+* Copyright (C) Gerhard Öttl <gerhard.oettl@ogersoft.at>
+**********************************************************************
+#LICENSE END
+*/
+
+
+
+/*
+* Frontend for user administration
+* Do precheck the permission before start real frontend
+*/
+showUserAdminWindow = function() {
+
+	Ext.Ajax.request({
+		url: 'user.php',
+		params: { _action: 'checkPermission' },
+		success: function(response) {
+			var responseObj = Ext.decode(response.responseText);
+			if (responseObj.success == true) {
+				showUserAdminWindow$();
+			}
+			else {
+				Ext.Msg.alert(Oger._('Antwort'), responseObj.msg);
+			}
+		},
+		failure: Oger.extjs.handleAjaxFailure,
+	});  // eo ajax request
+
+}  // eo show user admin window (precheck)
+
+
+
+/*
+* Frontend for user administration
+*/
+showUserAdminWindow$ = function() {
+
+
+	// create data store
+	var store = Ext.create('Ext.data.Store', {
+		autoLoad: true,
+		autoDestroy: true,
+		proxy: {
+			type: 'ajax', url: 'user.php?_action=loadList',
+			reader: { type: 'json', root: 'data' }
+		},
+		fields: [ 'id', 'logonName', 'realName', 'beginDate', 'endDate' ],
+	});
+
+
+
+	// Datagrid without additional panel
+	var adminGrid = Ext.create('Ext.grid.Panel', {
+		store: store,
+		stripeRows: true,
+		autoScroll: true,
+		//height: 300,  // works fine, but it is not the goal to use an explicit height here!
+		//layout: 'fit',  // does NOT work
+		//autoheight: true,  // does NOT work
+		// using: layout: 'fit' in the wraping panel works best
+		bbar: [
+			{ text: Oger._('Neuanlage'),
+				handler: function() {
+					showAdminDetailWin('INSERT', adminGrid.getStore());
+				}
+			},
+			'-',
+			'Filter'
+		],
+		columns: [
+			{ header: 'ID', dataIndex: 'id', width: 50 },
+			{ header: Oger._('Logon'), dataIndex: 'logonName' },
+			{ header: Oger._('Person'), dataIndex: 'realName', width: 200 },
+			{ header: Oger._('Beginn'), xtype: 'datecolumn', dataIndex: 'beginDate' },
+			{ header: Oger._('Ende'), xtype: 'datecolumn', dataIndex: 'endDate' },
+		],
+		listeners: {
+			itemdblclick: function(view, record, item, index, event) {
+				showAdminDetailWin('UPDATE', view.getStore(), record);
+			}
+		},
+	});
+
+
+	// create detailwindow
+	var showAdminDetailWin = function(dbAction, store, record) {
+
+		var adminDetailForm = Ext.create('Ext.form.Panel', {
+			bodyStyle: 'padding:15px; background:transparent',
+			border: false,
+			autoScroll: true,
+			trackResetOnLoad: true,
+			url: 'user.php',
+			items: [
+				{ xtype: 'hidden', name: 'dbAction', value: dbAction },
+				{ xtype: 'textfield',fieldLabel: Oger._('ID'), name: 'id', readOnly: true },
+				{ xtype: 'textfield', fieldLabel: Oger._('Logon'), name: 'logonName', allowBlank: false },
+				{ xtype: 'textfield', fieldLabel: Oger._('Person'), name: 'realName' },
+				{ xtype: 'datefield', fieldLabel: Oger._('Beginn'), name: 'beginDate', submitFormat: 'Y-m-d' },
+				{ xtype: 'datefield', fieldLabel: Oger._('Ende'), name: 'endDate', submitFormat: 'Y-m-d' },
+				//{ xtype: 'checkbox', fieldLabel: Oger._('PAM Authentifizierung'), name: 'authPam', uncheckedValue: '0' },
+				{ xtype: 'textfield', inputType: 'password', fieldLabel: Oger._('Passwort'), name: 'newPassword' },
+				{ xtype: 'textfield', inputType: 'password', fieldLabel: Oger._('Passwort bestätigen'), name: 'newPasswordRepeated' },
+				{ xtype: 'checkbox', fieldLabel: Oger._('Anmeldung erlaubt'), name: 'logonPerm', uncheckedValue: '0' },
+				{ xtype: 'checkbox', fieldLabel: Oger._('Admin-Rechte'), name: 'adminPerm', uncheckedValue: '0' },
+				{ xtype: 'checkbox', fieldLabel: Oger._('Stammdaten-Rechte'), name: 'masterPerm', uncheckedValue: '0' },
+			]
+		});
+
+		var adminDetailWin = new Ext.Window({
+			title: Oger._('User Details'),
+			width: 500,
+			height: 360,
+			modal: true,
+			autoScroll: true,
+			layout: 'fit',
+			items: [ adminDetailForm ],
+			buttonAlign: 'center',
+			buttons: [
+				{ text: Oger._('Ok'),
+					handler: function(button, event) {
+						adminDetailForm.getForm().submit(
+							{ params: { _action: 'save' },
+								clientValidation: true,
+								success: function(form, action) {
+									if (Oger.extjs.actionSuccess(action)) {
+										Ext.Msg.alert(Oger._('Ergebnis'), Oger._('Datensatz wurde erfolgreich gespeichert.'));
+										//store.reload();
+										//store.sync();
+										store.load();
+										//adminDetailWin.close();  // triggers isDirty check and beforeclose event
+										//Oger.extjs.forceClose(adminDetailWin);
+										Oger.extjs.resetDirty(form);
+										adminDetailWin.close();
+									};
+								},
+								failure: function(form, action) {
+									if (!Oger.extjs.handleFormSubmitFailure(form, action)) {
+										//handle remaining failures
+									}
+								}
+							}  // eo submit handler
+						)  // eo submit function
+					}  // eo handler function
+				},  // eo ok button
+				{ text: Oger._('Abbrechen'),
+					handler: function(button, event) {
+						adminDetailWin.close();
+					}  // eo handler function
+				}  // eo abort button
+			],  // eo buttons
+			listeners: {
+				beforeclose: function(panel) {
+					if (adminDetailForm.getForm().isDirty()) {
+						Oger.extjs.confirmDirtyClose(panel);
+						return false; // always stop closing dirty forms
+					}
+					return true;
+				},  // eo beforeclose
+			}  // eo listeners
+		});
+
+		adminDetailWin.show();
+		//adminDetailWin.syncSize(); // does not do what I want
+		Oger.extjs.moveToFit(adminDetailWin, mainWindow);
+
+		if (dbAction == 'UPDATE') {
+			adminDetailForm.load({
+				params: { _action: 'loadRecord', id: record.data.id }
+			});
+		}
+
+	};  // eo adminDetailWindow
+
+
+	var target = Ext.getCmp('mainWindowCenterRegionId');
+	target.removeAll();
+	target.add(adminGrid);
+	target.doLayout();
+
+
+} // eo show user admin window

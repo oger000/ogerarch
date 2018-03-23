@@ -1,0 +1,310 @@
+<html>
+<head>
+  <title>OgerArch DigDig Hilfe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- <link rel="stylesheet" type="text/css" href="lib/extjs4/resources/css/ext-all.css"> -->
+</head>
+<body>
+
+<CENTER><A href="index.html">Index</A></CENTER>
+<HR>
+
+<H1>Matrix</H1>
+
+
+<img src="matrix-start.png">
+<br>
+<br>
+<br>
+
+Folgende Prüfungen werden vor dem Erstellen einer Exportdatei durchgeführt:<br>
+<ul>
+  <li>angegebene Straten müssen vorhanden sein
+  <li>Stratum darf nicht auf sich selbst zeigen
+  <li>Zirkelbezüge
+  <li>Cluster-Zuordnung muss eindeutig sein (Ausnahmen siehe unten)
+  <li>Kategorie-Konflikte bei 'Ist Ident mit' Zusammenfassung
+  <li>Hinweis auf nicht zugeordnete Straten
+</ul>
+
+<br>
+<hr>
+<br>
+
+<strong>Exportformat</strong>
+Ausführliche Beschreibung siehe <a href="#export_format">unten</a>.<br>
+<br>
+
+<strong>Maximale Fehleranzahl</strong><br>
+Da manche Fehler nur rein kosmetische Auswirkungen haben, aber die
+Gültigkeit der Matrix nicht grundlegend beeinträchtigen wird nicht nach jedem Fehler
+abgebrochen. Ausserdem ist es sinnvoll mehrere Fehler zu sammeln und
+in einem Durchgang zu bereinigen.<br>
+Andererseits haben bestimmte Fehler (insbesondere Zirkelbezüge) das Potential
+viele Folgefehler zu produzieren, die nach Beseitigung des Zirkelbezuges automatisch
+verschwinden und nur das Fehlerprotokoll unnötig aufblähen. Zusätzlich
+können Zirkelbezüge zu sehr langen Verarbeitungszeiten führen.<br>
+Falls es mit der Standardeinstellung zu unzumutbare langen Laufzeiten kommt wird
+empfohlen den Grenzwert sehr niedrig anzusetzen (fünf oder niedriger) und
+stufenweise zu erhöhen.<br>
+Mit "0" wird versucht ohne Rücksicht auf die Anzahl der Fehler den gesamten
+Matrixbaum aufzubauen.<br>
+<br>
+
+<strong>Fehlerbereinigung durch ignorieren</strong><br>
+Durch diese Option werden Beziehungen oder ganze Straten welche einen
+Fehler verursachen ignoriert um die Anzahl der Folgefehler zu minimieren.
+Logischerweise wird die Matrix dadurch im Fehlerfall unvollständig oder
+falsch sein. Anderseits wächst die Wahrscheinlichkeit, dass die
+Mehrzahl jener Straten und Beziehungen welche keine Fehler verursachen
+berücksichtigt werden.<br>
+Wenn alle Fehler beseitigt sind ist diese Option belanglos.<br>
+<br>
+
+<strong>Knoten über die 'Ist Ident mit' Beziehung zusammenfassen</strong><br>
+Diese Option verschmilzt Knoten welche in einer 'Ist Ident mit' Beziehung
+zueinander stehen. Der Umstand, dass es sich um mehrere Straten handelt
+ist dann nur mehr in der Bezeichnung 'xxx=yyyy' erkennbar.<br>
+Für Darstellungsprogramme mit eingebauter archälogischer Logik sollte diese
+Option deaktiviert werden, um die dortigen Mechanismen nicht zu stören.<br>
+Für generische Graphenprogramme ist diese Option notwendig.<br>
+<br>
+
+<strong>Redundante Beziehungen entfernen</strong><br>
+Ist diese Option gesetzt, dann wird aus den Beziehungen<br>
+2 liegt unter 1<br>
+3 liegt unter 2<br>
+3 liegt unter 1<br>
+die letzte entfernt, weil sie sich ohnehin aus den ersten beiden
+Beziehungen ableitet.<br>
+Für Darstellungsprogramme mit eingebauter archälogischer Logik ist diese
+Option meist überflüssig, stört aber nicht.<br>
+Für generische Graphenprogramme ist diese Option notwendig.<br>
+<br>
+
+<strong>Hilfslinien für 'Zeitgleich-mit' Beziehungen erstellen</strong><br>
+Damit werden horizontale Hilfslinien zwischen Zeitgleich markierten Knoten
+gezeichnet, um eine Hilfe für eine eventuell notwendige Nachbearbeitung zu geben.
+
+<strong>Clusterbildung auf Ebene</strong><br>
+Als Clusterbildung wird die Zusammenfassung von Straten zu einer übergeordneten
+Einheit verstanden, welche in der Matrix optisch dargestellt wird.
+Laut den Richtlinien 2012 des Bundesdenkmalamtes sind dies zu Zusammenfassung
+von Straten zu Objekten und von Objekten zu Objektgruppen.<br>
+Zusätzlich könnte eine Zusammenfassung aller Straten eines Interfaces zu einem
+Cluster dargestellt werden.<br>
+Die Clusterbildung auf Ebene von Komplexen wurde nicht implementiert, weil eine
+freie Komplexzusammenstellung in den Richtlinien nicht vorgesehen ist.<br>
+Darstellungsprogramme mit eingebauter archälogischer Logik verfügen über recht
+unterschiedliche Fähigkeiten zur Darstellung von Clustern. Soweit im dazugehörigen
+Austauschformat möglich wird die Information zur Clusterbildung berücksichtigt.<br>
+Für generische Graphenprogramme ist diese Option notwendig um
+eine optische Zusammenfassung zu erreichen.<br>
+<br>
+
+<strong>Beschriftung erweitern um</strong><br>
+Die Beschriftung von einem Stratum oder Cluster kann - jeweils in einer
+eigenen Zeile - zusätzlich um die Angaben der Kategorie (Interface, Schicht,
+Skelett, Mauer, Holz) oder um die selbst vergebenen Typbezeichnungen
+(Grube, Pfostenloch, usw) erweitert werden.<br>
+Die Möglichkeiten diese Information zu verarbeiten hängt vom
+Darstellungsprogramm ab.<br>
+<br>
+
+<strong>Mehrfache Clusterzuordnung erlauben</strong><br>
+Die Zuordnung einer untergeordneten Einheit zu mehrereren Clustern
+wird im Normalfall als Fehler behandelt.
+Manchmal kann es aber sinnvoll sein solche Mehrfachzuordnungen zu
+erlauben. Mit dieser Option können die dazugehörigen Fehlermeldungen
+abgeschaltet werden.<br>
+<br>
+
+<strong>Cluster-Darstellung</strong><br>
+Sofern die Möglichkeit besteht die Cluster Darstellung zu beeinflussen,
+werden Cluster standardmässig durch einen Rahmen rund um die untergeordneten
+Elemente dargestellt.<br>
+Wird jedoch eine Mehrfachzuordnung benötigt führt dies häufig zu
+schwer darstellbaren Kombinationen. In diesem Fall ist es günstiger
+den Cluster durch Sammelknoten oberhalb oder
+unterhalb der untergeordneten Elemente darzustellen.
+Sammelknoten sind Pseudostraten die nur dazu dienen die Zusammengehörigkeit
+von Elementen anzuzeigen.<br>
+Die Möglichkeiten die Cluster Darstellung zu beeinflussen hängt vom
+Darstellungsprogramm ab.<br>
+<br>
+
+<strong>Sammelknoten-Beschriftung erweitern um Inhaltsliste</strong><br>
+Um Sammelknoten noch deutlicher zu kennzeichnen kann in deren Beschriftung
+die Liste der untergeordneten Elemente aufgenommen werden.<br>
+Die Möglichkeiten die Cluster Beschriftung zu beeinflussen hängt vom
+Darstellungsprogramm ab.<br>
+<br>
+
+<hr>
+<br>
+
+<a name="export_format">
+<strong>Exportformat</strong>
+<ul>
+  <li><a href="#prodocol_only">Nur Protokoll</a>
+  <li><a href="#graphiz_dot">Graphviz (dot)</a>
+  <li><a href="#ygraphml_yed">yGraphml für yED</a>
+  <li><a href="#graphml_std">Standard graphml</a>
+  <li><a href="#stratify15_csv">Stratify 1.5 (csv)</a>
+  <li><a href="#basp_lst">BASP (lst)</a>
+</ul>
+
+<br>
+
+Folgende Aufstellung erhebt keinen Anspruch auf Vollständigkeit oder intensiver Kenntnisse
+der getesteten Matrix-Programme. Sie gibt die subjektive Erfahrung eines schnellen
+Evaluations-Tests wieder.
+Falls jemand zusätzliche Informationen beisteuern kann,
+sind verbesserte oder neue Exportformate nicht ausgeschlossen.<br>
+
+<table border="1">
+  <tr>
+    <td>Format
+    <td>Programm
+    <td>Spezialgebiet
+    <td>Lizenz
+    <td align="center">kennt<br>'Ident&nbsp;mit'
+    <td align="center">kennt<br>Gleichzeitig
+    <td align="center">Entfernt<br>Redundanzen
+    <td align="center">Cluster
+    <td align="center">Beschriftung erweiterbar
+    <td align="center">Editierbar
+  <tr>
+    <td>dot File
+    <td>Graphviz 2.26.3
+    <td>Graphen
+    <td>Freie Open Source Software
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="red" align="center">nein
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="yellow" align="center">ja aber instabil
+  <tr>
+    <td>yGraphMl
+    <td>yED 3.9.2
+    <td>Graphen
+    <td>unfrei, aber frei benutzbar, kein Source
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="green" align="center">ja,&nbsp;per&nbsp;OgerArch
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="green" align="center">ja, sehr guter Editor
+  <tr>
+    <td>graphml
+    <td>kein Programm getestet
+    <td>&nbsp;
+    <td>&nbsp;
+    <td>&nbsp;
+    <td>&nbsp;
+    <td>&nbsp;
+    <td>&nbsp;
+    <td>&nbsp;
+    <td>&nbsp;
+  <tr>
+    <td>csv
+    <td>Stratify 1.5
+    <td>Archäologie
+    <td>unfrei, aber frei benutzbar, kein Source
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="green" align="center">ja, erlaubt mehrere Ebenen
+    <td bgcolor="red" align="center">nein, verwendet den Knotennamen als Beschriftung
+    <td bgcolor="yellow" align="center">minimal durch Styles gestaltbar
+  <tr>
+    <td>lst
+    <td>ArchED 1.4.1
+    <td>Archäologie
+    <td>unklar, kein Source
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="green" align="center">ja
+    <td bgcolor="yellow" align="center">?
+    <td bgcolor="red" align="center">nein, Darstellung nur über Sammelknoten möglich
+    <td bgcolor="red" align="center">nein, verwendet den Knotennamen als Beschriftung
+    <td bgcolor="yellow" align="center">?
+</table>
+
+
+<br>
+
+
+<a name="prodocol_only">
+<h2>Nur Protokoll</h2>
+Alle Prüfungen werden durchgeführt, aber keine Exportdatei erstellt.<br>
+<br>
+<br>
+
+<a name="graphiz_dot">
+<h2>Graphviz (dot)</h2>
+Die erstellten Graphiken waren im Test optisch nicht sehr ansprechend.<br>
+Bleibt als Freie Open Source Software aber weiterhin unter Beobachtung.<br>
+<br>
+<br>
+
+<a name="ygraphml_yed">
+<h2>yEd</h2>
+War im Test sehr schnell, einfach zu bedienen, hervorragende Navigation
+und Suche - auch bei grosser Matrix. Viele Bearbeitungsmöglichkeiten.<br>
+Mit yED können die verschiedensten Graphenlayouts dargestellt werden.
+Für die Harries-Matrix hat sich das hierarchische Layout als passend herausgestellt.
+Folgende Einstellungen müssen gegenüber dem Standard geändert werden:
+<ul>
+  <li>Kanteneinstellungen -&gt; Rückwärtskanten<br>
+  Notwendig um "Zeitgleich-mit" Hilfslinien darzustellen. Ausserdem können so
+  Zirkelbezüge visuell dargestellt werden, was eine Hilfe bei der Fehlersuche sein kann.
+  <li>Kanteneinstellungen -&gt; Automatische Kantengruppierung<br>
+  Fasst abgehende oder ankommende Kanten eines Knoten besser zusammen.
+  <li><b>Schichtzuweisung -&gt; Strategie</b><br>
+  Hier ist die Angabe 'Koordinatenabhängig' wichtig, weil ansonsten die bereits
+  vorberechneten 'Zeitgleich-mit' Beziehungen wieder verlorengehen.<br>
+</ul>
+<br>
+<img src="matrix-yed-layers.png"><br>
+<br>
+<br>
+Eine Zusammenfassung von parallel laufenden Linien und damit eine etwas
+kompaktere Linienführung kann durch
+'Kanteneinstellungen' -&gt; 'Automatische Kantengruppierung' erreicht werden.<br>
+<br>
+<img src="matrix-yed-edges.png"><br>
+<br>
+<br>
+
+<a name="stratify15_csv">
+<h2>Stratify 1.5 (csv)</h2>
+Hat eine hervorragende Dokumentation und einzigartige archäologische Sonderfunktionen.<br>
+Brauchbare Suche und Navigation.
+Bei komplexeren Strukturen aber im Test nicht zufriedenstellende Darstellung, langsam,
+Gestaltungsmöglichkeiten umständlich und allgemein mit einer veraltet wirkenden Bedienung.<br>
+<br>
+Beim Import als CSV ist die erste Reihe als Feldnamen zu deklarieren. Die
+Zuordnung der importierten Spalten zu den internen Bezeichnungen sollte standardmässig
+passen - eventuelle Änderungen mit der rechten Maustaste. Separator innerhalb der
+Units ist der Beistrich. Nach dem Import ist der DUMMY Context (Stratum) zu löschen.<br>
+<br>
+<img src="matrix-stratify-csv.png">
+<img src="matrix-stratify-fields.png">
+<img src="matrix-stratify-separator.png"><br>
+<img src="matrix-stratify-dummy.png"><br>
+<br>
+<br>
+
+<a name="basp_lst">
+<h2>ArchED (lst)</h2>
+Wenig bis gar keine Gestaltungsmöglichkeiten, keine Suche, mühsame Navigation.<br>
+<br>
+<br>
+
+
+
+
+
+</body>
+</html>
