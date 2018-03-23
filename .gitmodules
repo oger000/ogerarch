@@ -1,0 +1,24 @@
+[submodule "web/lib/ogerlibjs"]
+	path = web/lib/ogerlibjs
+	url = git@github.com:oger000/ogerlibjs.git
+[submodule "web/lib/ogerlibphp"]
+	path = web/lib/ogerlibphp
+	url = git@github.com:oger000/ogerlibphp.git
+[submodule "web/lib/tcpdf"]
+	path = web/lib/tcpdf
+	url = git@github.com:oger000/tcpdf.git
+
+[submodule "web/lib/ogerlibjs12"]
+	path = web/lib/ogerlibjs12
+	url = git@github.com:oger000/ogerlibjs12.git
+[submodule "web/lib/ogerlibphp12"]
+	path = web/lib/ogerlibphp12
+	url = git@github.com:oger000/ogerlibphp12.git
+
+[submodule "devscripts12"]
+	path = devscripts12
+	url = git@github.com:oger000/ogerdevscripts12.git
+[submodule "web/lib/extjs5"]
+	path = web/lib/extjs5
+	url = git@github.com:oger000/extjs5.git
+

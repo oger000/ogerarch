@@ -1,0 +1,8 @@
+*localonly*
+
+# exclude dist files (version.inc.php is a distfile)
+version.inc.php
+version-dist.inc.php
+DISTVERSION
+
+/nbproject/private/

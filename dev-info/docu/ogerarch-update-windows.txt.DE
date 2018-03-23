@@ -1,0 +1,19 @@
+Kurzanleitung für das halbautomatische Standard-Update.
+
+1) Backup der Datenbank über den Menüzweig Export -> Backup
+
+2) Explizite Abmeldung der Dokumentation über den Menüpunkt
+   Abmelden -> Anwendung beenden
+   (Optional für ganz vorsichtige: Den Rechner neu starten)
+
+3) Das Update durch starten (doppelklick) der Datei
+   ogerarch-update.bat vom Stick starten.
+   Anweisungen befolgen und Ausgabe kontrollieren.
+
+4) WICHTIG:
+   Das Dokumentationssystem im Browser neu aufrufen. Um
+   sicherzugehen, dass der Browser keine alten/zwischenspeicherten
+   Programmteile verwendet, bitte den Browser-Cache löschen bzw
+   ein Neuladen erzwingen.
+   Bei den meisten Browsern funktioniert dies über die
+   Tastenkombination <Strg><F5>
