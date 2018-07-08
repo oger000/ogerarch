@@ -3,7 +3,7 @@
 
 ## Get started
 - Clone the source from github <https://github.com/oger000/ogerarch> or fork at github.
-- Initiating the submodules the first time after a clone is a mess in git, but the script `dev-info/git-submodule-firstrun.sh` should do the job for you.
+- Initiating the submodules the first time after a clone is a mess in git, but the script `dev-info/git-submodule-firstrun.sh` should do the job for you. You have to copy this script to the top level directory of the project. This is the directory where the .gitmodules file is located.
 - Happy coding.
 
 ## Some hints

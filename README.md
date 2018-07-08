@@ -32,4 +32,4 @@ For windows there exists the dos-batch file `dev-info/ogerarch-update-windows.ba
 - Be happy &#9786;
 
 ## Development
-See `dev-info/README-DEV.md`.
+Read `dev-info/README-DEV.md`.
