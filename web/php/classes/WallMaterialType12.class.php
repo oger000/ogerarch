@@ -21,6 +21,7 @@ class WallMaterialType12 extends DbRecFake {
 	const ID_BRICK = 'ID_BRICK';
 	const ID_MIXED = 'ID_MIXED';
 	const ID_MUDBRICK = 'ID_MUDBRICK';
+	const ID_CONCRETE = 'ID_CONCRETE';
 
 
 	static $records = array();
@@ -60,6 +61,13 @@ class WallMaterialType12 extends DbRecFake {
 			static::ID_MUDBRICK =>
 				array('id' => static::ID_MUDBRICK,
 							'name' => Oger::_('Lehmziegel'),
+							'code' => '',
+							'beginDate' => '',
+							'endDate' => '',
+						 ),
+			static::ID_CONCRETE =>
+				array('id' => static::ID_CONCRETE,
+							'name' => Oger::_('Beton'),
 							'code' => '',
 							'beginDate' => '',
 							'endDate' => '',

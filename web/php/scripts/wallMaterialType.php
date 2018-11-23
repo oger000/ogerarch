@@ -14,7 +14,7 @@ require_once(__DIR__ . '/../init.inc.php');
 
 // load list
 if ($_REQUEST['_action'] == 'loadList') {
-	echo Extjs::encData(WallMaterialType::getRecords());
+	echo Extjs::encData(WallMaterialType12::getRecords());
 	exit;
 }
 
@@ -22,12 +22,6 @@ if ($_REQUEST['_action'] == 'loadList') {
 
 // load record
 if ($_REQUEST['_action'] == 'loadRecord') {
-	$obj = WallMaterialType::newFromDb(array('id' => $_REQUEST['id']));
-	echo Extjs::encData($obj->values);
+	echo Extjs::encData(WallMaterialType12::getRecByKey($_REQUEST['id']));
 	exit;
 }
-
-
-
-
-?>
