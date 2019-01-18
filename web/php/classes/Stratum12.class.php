@@ -338,8 +338,6 @@ class Stratum12 extends DbRec {
 				"__EXTJS_LIMIT__";
 		}
 
-
-
 		throw new Exception("Invalid id $target for sql template.");
 	}  // get select
 
@@ -857,13 +855,16 @@ class Stratum12 extends DbRec {
 
 
 		// store arch find ids and arch object ids
-		StratumToArchFind12::storeArchFindIds(
+		$warnMsg .= StratumToArchFind12::storeArchFindIds(
 			$values['excavId'], $values['stratumId'],$values['archFindIdList'], $dbAction2);
 		ArchObjectToStratum12::storeArchObjectIds(
 			$values['excavId'], $values['stratumId'], $values['archObjectIdList'], $dbAction2);
 
+		// reply with core ids, but add warn message
+		if ($warnMsg) {
+			$seleVals['_warnMsg'] = "Stratum erfolgreich gespeichert, aber:<br>" . $warnMsg;
+		}
 
-		// reply with core ids
 		return $seleVals;
 	}  // eo save input
 

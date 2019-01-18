@@ -224,8 +224,13 @@ Ext.define('App.view.inputCenter.stratum.Window', {
 						return;
 					}
 					Oger.extjs.resetDirty(form);
-					var mb = Ext.create('Oger.extjs.MessageBox').alert(Oger._('Hinweis'), Oger._('Datensatz erfolgreich gespeichert.'));
-					Ext.Function.defer(function() { mb.hide(); me.focus(); }, MSG_DEFER);
+					if (action.result.data && action.result.data._warnMsg) {
+						Ext.Msg.alert(Oger._('Warnung'), action.result.data._warnMsg);
+					}
+					else {
+						var mb = Ext.create('Oger.extjs.MessageBox').alert(Oger._('Hinweis'), Oger._('Datensatz erfolgreich gespeichert.'));
+						Ext.Function.defer(function() { mb.hide(); me.focus(); }, MSG_DEFER);
+					}
 
 					// save form values of new entris as defaults for followup input
 					if (!me.gluePanel.lastSavedStratumForm) {

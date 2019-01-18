@@ -138,18 +138,44 @@ class StratumToArchFind12 extends DbRec {
 				"DELETE FROM stratumToArchFind " .
 				"WHERE excavId=:excavId AND stratumId=:stratumId AND archFindId=:archFindId AND BINARY stratumId=:stratumId AND BINARY archFindId=:archFindId");
 
+			$pstmtStratumCount = Dbw::$conn->prepare(
+				"SELECT COUNT(*) AS count FROM stratumToArchFind WHERE excavId=:excavId AND archFindId=:archFindId");
+
+			$pstmtArchFind = Dbw::$conn->prepare("SELECT * FROM archFind WHERE excavId=:excavId AND archFindId=:archFindId");
+
 			$seleValsDel = $seleVals;
+			$seleValsStratumCount = array("excavId" => $excavId);
+			$seleValsArchFind = array("excavId" => $excavId);
+			$notDelIds = array();
 			foreach($oldIds as $id) {
 				// skip entries present in input
 				if ($newIds[$id]) {
 					continue;
 				}
+				// extracheck: do not delete archfind from stratum if this is the last stratum for this find and its not a strayfind
+				$seleValsStratumCount['archFindId'] = $id;
+				$pstmtStratumCount->execute($seleValsStratumCount);
+				$stratumCountRow = $pstmtStratumCount->fetch(PDO::FETCH_ASSOC);
+				if ($stratumCountRow['count'] == 1) {
+					$seleValsArchFind['archFindId'] = $id;
+					$pstmtArchFind->execute($seleValsArchFind);
+					$archFindRow = $pstmtArchFind->fetch(PDO::FETCH_ASSOC);
+					if (!$archFindRow['isStrayFind']) {
+						array_push($notDelIds, $id);
+						continue;
+					}
+				}
 				$seleValsDel['archFindId'] = $id;
 				$pstmt->execute($seleValsDel);
 			}
 			$pstmt->closeCursor();
+
+			if ($notDelIds) {
+				$warnMsg .= "Verweis zu den Fundnummer(n) " . implode(", ", $notDelIds) . " nicht gelöscht, weil dies das letzte Stratum für diese Funde ist.";
+			}
 		}
 
+		return $warnMsg;
 	}  // eo store arch find ids
 
 
