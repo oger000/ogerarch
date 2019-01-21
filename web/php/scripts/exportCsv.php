@@ -76,7 +76,7 @@ function csvExportExcav($excav) {
 	fwrite($fh, "\n");
 	fwrite($fh, OgerCsv::prepRowOut("*** EXCAVATION MASTER [BEGIN]"));
 
-	$values = $excav['TRANSFERHEADER']['MASTERDATACOPY'];
+	$values = $excav['TRANSFERHEADER']['EXCAVATIONMASTERCOPY'];
 
 	if (!$_REQUEST['excavation']) {
 		$values = array_intersect_key($values, array_flip(array('id', 'name', 'excavMethodId', 'beginDate', 'endDate')));
@@ -126,7 +126,7 @@ function csvExportExcav($excav) {
 		fwrite($fh, OgerCsv::prepRowOut($values));
 	}
 
-	fwrite($fh, OgerCsv::prepFieldOut("*** EXCAVATION / STRATUMLIST [END]"));
+	fwrite($fh, OgerCsv::prepRowOut("*** EXCAVATION / STRATUMLIST [END]"));
 
 	// -----------------------------------------------
 
@@ -168,7 +168,7 @@ function csvExportExcav($excav) {
 	// space between excavations
 
 	fwrite($fh, "\n");
-	fwrite($fh, OgerCsv::prepFieldOut("****** EXCAVATION [END] ******"));
+	fwrite($fh, OgerCsv::prepRowOut("****** EXCAVATION [END] ******"));
 	fwrite($fh, "\n\n\n");
 
 	//fclose($fh);

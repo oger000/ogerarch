@@ -196,17 +196,17 @@ class StratumWall extends DbRecord {
 			$values['constructionTypeName'] = ($master->values['name'] ?: $values['constructionType']);
 			$values['constructionTypeCode'] = $master->values['code'];
 
-			$master = WallBaseType::newFromDb(array('id' => $this->values['wallBaseType']));
-			$values['wallBaseTypeName'] = ($master->values['name'] ?: $values['wallBaseType']);
-			$values['wallBaseTypeCode'] = $master->values['code'];
+			$master = WallBaseType12::getRecByKey($this->values['wallBaseType']);
+			$values['wallBaseTypeName'] = ($master['name'] ?: $values['wallBaseType']);
+			$values['wallBaseTypeCode'] = $master['code'];
 
 			$master = WallStructureType::newFromDb(array('id' => $this->values['structureType']));
 			$values['structureTypeName'] = ($master->values['name'] ?: $values['structureType']);
 			$values['structureTypeCode'] = $master->values['code'];
 
-			$master = WallMaterialType::newFromDb(array('id' => $this->values['materialType']));
-			$values['materialTypeName'] = ($master->values['name'] ?: $values['materialType']);
-			$values['materialTypeCode'] = $master->values['code'];
+			$master = WallMaterialType12::getRecByKey($this->values['materialType']);
+			$values['materialTypeName'] = ($master['name'] ?: $values['materialType']);
+			$values['materialTypeCode'] = $master['code'];
 
 			$master = WallBinderType::newFromDb(array('id' => $this->values['binderType']));
 			$values['binderTypeName'] = ($master->values['name'] ?: $values['binderType']);
