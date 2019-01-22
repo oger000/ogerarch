@@ -114,6 +114,9 @@ function csvExportExcav($excav) {
 	$stratumFields = Stratum::getAllExtendedFieldNames(array('export' => true));
 	$stratumFields = array_fill_keys($stratumFields, '');
 
+	unset($stratumFields['id']);
+	unset($stratumFields['stratumIdSort']);
+
 	foreach($excav['STRATUMLIST'] as $values) {
 
 		// normalize fields across categories
@@ -143,7 +146,6 @@ function csvExportExcav($excav) {
 		fwrite($fh, OgerCsv::prepRowOut($values));
 	}  // eo arch find
 
-	fwrite($fh, "\n");
 	fwrite($fh, OgerCsv::prepRowOut("*** EXCAVATION / ARCHOBJECTLIST [END]"));
 
 	// -----------------------------------------------
@@ -161,7 +163,6 @@ function csvExportExcav($excav) {
 		fwrite($fh, OgerCsv::prepRowOut($values));
 	}  // eo arch find
 
-	fwrite($fh, "\n");
 	fwrite($fh, OgerCsv::prepRowOut("*** EXCAVATION / ARCHOBJECTGROUPLIST [END]"));
 
 	// -----------------------------------------------
